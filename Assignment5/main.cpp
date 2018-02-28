@@ -1,3 +1,6 @@
+/*Anand Kothari
+Date - 02/27/18 */
+
 #include <string>
 #include <sstream>
 #include <fstream>
@@ -54,18 +57,12 @@ getline(dept,budget,',');
 atoi(string(budget).substr(1,string(budget).length()).c_str());
 getline(dept,managerid);
 atoi(string(managerid).substr(1,string(managerid).length()).c_str());
-// cout <<did << ',';
-// cout <<dname<< ',';     //printing the file values
-// cout <<budget<< ',';
-//  cout <<managerid << endl;
+
 
 dept_arr[d]=managerid; // storing managerid in the array
 d++; // counter to store every managerid in an array
 
-//
-// std::istringstream dept(buffer);
-// dept >> managerid;
-//cout << managerid;
+
 }
 catch (const exception& e) {}
 }
@@ -102,7 +99,7 @@ atoi(string(salary).substr(1,string(salary).length()).c_str());
 emp_arr[c]=eid; // storing eid in the array
 c++; // counter to store every eid in an array
 
-crr[m]=ename;
+crr[m]=ename; 
 m++;
 
 drr[n]=age;
@@ -115,7 +112,7 @@ catch (const exception& e) {}
 }
 
 std::ofstream outfile;
-outfile.open("join.csv");
+outfile.open("join.csv");  // create and open join.csv file
 
 for( int a = 0; a < sizeof(dept_arr)/sizeof(dept_arr[0]); a++)  // to go through all data of first csv file
  {
@@ -123,7 +120,7 @@ for( int a = 0; a < sizeof(dept_arr)/sizeof(dept_arr[0]); a++)  // to go through
       {
         if (dept_arr[a] == emp_arr[d])
         {
-            outfile << dept_arr[a]<<','<< crr[a]<<','<< drr[a]<<','<< err[a]<<endl;
+            outfile << dept_arr[a]<<','<< crr[a]<<','<< drr[a]<<','<< err[a]<<endl; // printing all tupples to the join.csv file 
         }
       }
 
